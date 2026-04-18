@@ -1,0 +1,21 @@
+{
+  "name": "wordpress-devkit",
+  "version": "1.0.0",
+  "description": "Scaffold WordPress themes and plugins, debug white screens and errors, audit PHP for common vulnerabilities, and generate Gutenberg blocks.",
+  "author": {
+    "name": "Mohit Kale",
+    "email": "mr.mohit44@gmail.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "wordpress",
+    "wp",
+    "php",
+    "theme",
+    "plugin",
+    "gutenberg",
+    "security"
+  ],
+  "homepage": "https://github.com/mohitkale/wordpress-devkit",
+  "repository": "https://github.com/mohitkale/wordpress-devkit.git"
+}
