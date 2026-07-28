@@ -1,0 +1,51 @@
+services:
+  database:
+    image: mariadb:11.4
+    environment:
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wordpress
+      MARIADB_PASSWORD: wordpress
+      MARIADB_ROOT_PASSWORD: root-password
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 3s
+      timeout: 5s
+      retries: 30
+
+  wordpress:
+    image: wordpress:6.8.3-php8.3-apache
+    ports:
+      - "8088:80"
+    environment:
+      WORDPRESS_DB_HOST: database:3306
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+    volumes:
+      - wordpress:/var/www/html
+      - ../fixtures/wordpress/wp-content/plugins/devkit-smoke:/var/www/html/wp-content/plugins/devkit-smoke:ro
+      - ../fixtures/wordpress/wp-content/themes/devkit-smoke:/var/www/html/wp-content/themes/devkit-smoke:ro
+    depends_on:
+      database:
+        condition: service_healthy
+
+  cli:
+    image: wordpress:cli-2.11.0-php8.3
+    profiles: ["test"]
+    entrypoint: ["wp"]
+    working_dir: /var/www/html
+    environment:
+      WORDPRESS_DB_HOST: database:3306
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+    volumes:
+      - wordpress:/var/www/html
+      - ../fixtures/wordpress/wp-content/plugins/devkit-smoke:/var/www/html/wp-content/plugins/devkit-smoke:ro
+      - ../fixtures/wordpress/wp-content/themes/devkit-smoke:/var/www/html/wp-content/themes/devkit-smoke:ro
+    depends_on:
+      database:
+        condition: service_healthy
+
+volumes:
+  wordpress:

@@ -1,0 +1,25 @@
+{
+  "name": "wordpress-devkit-marketplace",
+  "owner": {
+    "name": "Mohit Kale",
+    "url": "https://github.com/mohitkale"
+  },
+  "description": "Practical WordPress development and troubleshooting workflows for Claude Code.",
+  "plugins": [
+    {
+      "name": "wordpress-devkit",
+      "source": "./",
+      "displayName": "WordPress DevKit",
+      "description": "Secure WordPress scaffolding, debugging, Gutenberg, migration, and release workflows.",
+      "version": "1.1.0",
+      "author": {
+        "name": "Mohit Kale"
+      },
+      "homepage": "https://github.com/mohitkale/wordpress-devkit",
+      "repository": "https://github.com/mohitkale/wordpress-devkit.git",
+      "license": "MIT",
+      "keywords": ["wordpress", "php", "gutenberg", "security", "wp-cli"],
+      "category": "development"
+    }
+  ]
+}

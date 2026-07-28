@@ -1,0 +1,13 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "devkit/smoke",
+  "title": "DevKit Smoke",
+  "category": "widgets",
+  "description": "A test-only dynamic block for WordPress DevKit.",
+  "textdomain": "devkit-smoke",
+  "supports": {
+    "html": false
+  },
+  "render": "file:./render.php"
+}

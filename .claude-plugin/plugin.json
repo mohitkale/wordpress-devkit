@@ -1,0 +1,21 @@
+{
+  "name": "wordpress-devkit",
+  "version": "1.1.0",
+  "displayName": "WordPress DevKit",
+  "description": "Practical WordPress workflows for secure plugin and theme scaffolds, fatal-error diagnosis, Gutenberg blocks, safe migrations, and release checks.",
+  "author": {
+    "name": "Mohit Kale"
+  },
+  "license": "MIT",
+  "keywords": [
+    "wordpress",
+    "wp",
+    "php",
+    "theme",
+    "plugin",
+    "gutenberg",
+    "security"
+  ],
+  "homepage": "https://github.com/mohitkale/wordpress-devkit",
+  "repository": "https://github.com/mohitkale/wordpress-devkit.git"
+}
